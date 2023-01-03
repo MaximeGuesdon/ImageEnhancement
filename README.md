@@ -2,7 +2,7 @@
 
 Image enhancement is a small python program running on Python 3.11.1.
 
-The program is made to resize your image with your desired Weight and Hight and with a dpi of 600 also converting it into a jpg.
+The program is made to resize your image with your desired Weight and Height and with a dpi of 600 also converting it into a jpg.
 
 To use the program you need to have python installed and then type the command : Python imageresizer.PY.
 
