@@ -26,33 +26,33 @@ def imageenhance(input_file):
 root = tkk.Tk()
 root.title("Image Enhancement")
 
-
+#Define the variable close_after_resize as Boolean , if the checkbox is check then its true and close else it doesn't close after resize
 close_after_resize = BooleanVar()
 
-
+#Create the checkbox using the boolean variable close_after_resize
 close_checkbox = tkk.Checkbutton(root, text="Close after resize", variable=close_after_resize)
 close_checkbox.pack()
 
-
+#Create the button to select a file and call the function select file
 input_button = tkk.Button(root, text="Select Input File", command=lambda: select_file(input_entry))
 input_button.pack()
 
 input_entry = tkk.Entry(root)
 input_entry.pack()
 
-
+#Create the label where the user must indicate the Width he desires
 width_label = tkk.Label(root, text="Width :")
 width_label.pack()
 width_entry = tkk.Entry(root)
 width_entry.pack()
 
-
+#Create the label where the user must indicate the Height he desires
 height_label = tkk.Label(root, text="Height :")
 height_label.pack()
 height_entry = tkk.Entry(root)
 height_entry.pack()
 
-#Call the function imageenhance image on button click
+#Call the function imageenhance with the inputfile as parameter on button click
 resize_button = tkk.Button(root, text="Resize", command=lambda: imageenhance(input_file))
 resize_button.pack()
 
