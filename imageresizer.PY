@@ -20,7 +20,7 @@ def imageenhance(input_file):
     # Open the input image
     with Image.open(input_file) as image:
         # Generate the filename for the output 
-        output_file = input_file[:-4] + "_resized.jpg"
+        output_file = input_file[:-4] + "_enhanced.jpg"
         # Create a Image variable and resize it with the width and height specified by the user
         image = image.resize((width,height), resample=Image.BICUBIC)
         # Save the image with improved resolution
