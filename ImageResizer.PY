@@ -1,4 +1,4 @@
-import tkinter as tkk
+import tkinter 
 from PIL import Image
 from tkinter import BooleanVar, filedialog
 
@@ -24,44 +24,44 @@ def imageenhance(input_file):
         root.destroy()
 
 # Create the window for the GUI
-root = tkk.Tk()
+root = tkinter.Tk()
 root.title("Image Enhancement")
 
 #Define the variable close_resize as Boolean , if the checkbox is check then its true and close else it doesn't close after resize
 close_resize = BooleanVar()
 
 #Create the checkbox using the boolean variable close_resize
-close_checkbox = tkk.Checkbutton(root, text="Close after the resize", variable=close_resize)
+close_checkbox = tkinter.Checkbutton(root, text="Close after the resize", variable=close_resize)
 close_checkbox.pack()
 
 #Create the button to select a file and call the function select file
-input_button = tkk.Button(root, text="Select the Input File", command=lambda: select_file(input_entry))
+input_button = tkinter.Button(root, text="Select the Input File", command=lambda: select_file(input_entry))
 input_button.pack()
 
-input_entry = tkk.Entry(root)
+input_entry = tkinter.Entry(root)
 input_entry.pack()
 
 #Create the label where the user must indicate the Width he desires
-width_label = tkk.Label(root, text="Width :")
+width_label = tkinter.Label(root, text="Width :")
 width_label.pack()
-width_entry = tkk.Entry(root)
+width_entry = tkinter.Entry(root)
 width_entry.pack()
 
 #Create the label where the user must indicate the Height he desires
-height_label = tkk.Label(root, text="Height :")
+height_label = tkinter.Label(root, text="Height :")
 height_label.pack()
-height_entry = tkk.Entry(root)
+height_entry = tkinter.Entry(root)
 height_entry.pack()
 
 #Call the function imageenhance with the inputfile as parameter on button click
-resize_button = tkk.Button(root, text="Resize", command=lambda: imageenhance(input_file))
+resize_button = tkinter.Button(root, text="Resize", command=lambda: imageenhance(input_file))
 resize_button.pack()
 
 # Allow the user to select a file using file dialog
 def select_file(entry):
     global input_file
     input_file = filedialog.askopenfilename()
-    entry.delete(0, tkk.END)
+    entry.delete(0, tkinter.END)
     entry.insert(0, input_file)
 
 
