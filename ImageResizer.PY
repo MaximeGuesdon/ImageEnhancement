@@ -7,34 +7,35 @@ input_file = ""
 
 def imageenhance(input_file):
     # Get the width and height from the user by getting the value of the textbox
-    target_width = int(width_entry.get())
-    target_height = int(height_entry.get())
+    height = int(height_entry.get())
+    width = int(width_entry.get())
+
 
     # Open the input image
     with Image.open(input_file) as image:
         # Generate the filename for the output by taking the name and cuting the .png  and adding _resized.jpg 
         output_file = input_file[:-4] + "_resized.jpg"
         # Create a Image variable and resize it with the width and height specified by the user
-        image = image.resize((target_width, target_height), resample=Image.BICUBIC)
+        image = image.resize((width,height), resample=Image.BICUBIC)
         # Save the image with improved resolution
-        image.save(output_file, dpi=(300, 300))
-    # Check close_after_resize variable so if its true close after the resize
-    if close_after_resize.get():
+        image.save(output_file, dpi=(600, 600))
+    # Check close_resize variable so if its true close after the resize
+    if close_resize.get():
         root.destroy()
 
 # Create the window for the GUI
 root = tkk.Tk()
 root.title("Image Enhancement")
 
-#Define the variable close_after_resize as Boolean , if the checkbox is check then its true and close else it doesn't close after resize
-close_after_resize = BooleanVar()
+#Define the variable close_resize as Boolean , if the checkbox is check then its true and close else it doesn't close after resize
+close_resize = BooleanVar()
 
-#Create the checkbox using the boolean variable close_after_resize
-close_checkbox = tkk.Checkbutton(root, text="Close after resize", variable=close_after_resize)
+#Create the checkbox using the boolean variable close_resize
+close_checkbox = tkk.Checkbutton(root, text="Close after the resize", variable=close_resize)
 close_checkbox.pack()
 
 #Create the button to select a file and call the function select file
-input_button = tkk.Button(root, text="Select Input File", command=lambda: select_file(input_entry))
+input_button = tkk.Button(root, text="Select the Input File", command=lambda: select_file(input_entry))
 input_button.pack()
 
 input_entry = tkk.Entry(root)
