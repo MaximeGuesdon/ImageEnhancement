@@ -24,6 +24,7 @@ def imageenhance(input_file):
         # Create a Image variable and resize it with the width and height specified by the user
         image = image.resize((width,height), resample=Image.BICUBIC)
         # Save the image with improved resolution
+        image = image.convert('RGB')
         image.save(output_file, dpi=(600, 600))
     # Check close_resize variable so if its true close after the resize
     if close_resize.get():
